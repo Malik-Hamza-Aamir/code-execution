@@ -8,6 +8,12 @@
     },
     {
       "path": "./libs/passport-auth"
+    },
+    {
+      "path": "./apps/problem-service-e2e"
+    },
+    {
+      "path": "./apps/problem-service"
     }
   ]
 }
