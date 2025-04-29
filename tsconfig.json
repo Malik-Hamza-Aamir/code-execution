@@ -14,6 +14,12 @@
     },
     {
       "path": "./apps/problem-service"
+    },
+    {
+      "path": "./apps/execution-service-e2e"
+    },
+    {
+      "path": "./apps/execution-service"
     }
   ]
 }
