@@ -9,9 +9,9 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service.js';
-import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
-import { GenericResponseDto } from './dto/generic-response.dto/generic-response.dto.js';
-import { LoginUserDto } from './dto/login-user.dto/login-user.dto.js';
+import { CreateUserDto } from '../shared/dto/create-user.dto/create-user.dto.js';
+import { GenericResponseDto } from '../shared/dto/generic-response.dto/generic-response.dto.js';
+import { LoginUserDto } from '../shared/dto/login-user.dto/login-user.dto.js';
 import type { Request, Response } from 'express';
 import {
   GitHubAuthGuard,

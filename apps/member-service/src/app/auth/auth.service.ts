@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
+import { CreateUserDto } from '../shared/dto/create-user.dto/create-user.dto.js';
 import * as bcrypt from 'bcrypt';
-import { AuthRepository } from './auth.repository.js';
-import { LoginUserDto } from './dto/login-user.dto/login-user.dto.js';
+// import { AuthRepository } from './auth.repository.js';
+import { LoginUserDto } from '../shared/dto/login-user.dto/login-user.dto.js';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
+import { CommonRepository } from '../shared/repository/common.repository.js';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly authRepository: AuthRepository,
+    private readonly authRepository: CommonRepository,
     private jwtService: JwtService
   ) {}
 

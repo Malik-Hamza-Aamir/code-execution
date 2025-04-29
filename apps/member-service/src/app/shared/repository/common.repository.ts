@@ -4,8 +4,8 @@ import {
   Injectable,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { PrismaService } from '../shared/prisma/prisma.service.js';
-import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
+import { PrismaService } from '../prisma/prisma.service.js';
+import { CreateUserDto } from '../dto/create-user.dto/create-user.dto.js'; 
 
 interface RefreshToken {
   userId: number;
@@ -14,7 +14,7 @@ interface RefreshToken {
 }
 
 @Injectable()
-export class AuthRepository {
+export class CommonRepository {
   constructor(private prisma: PrismaService) {}
 
   async createUser(data: CreateUserDto) {
