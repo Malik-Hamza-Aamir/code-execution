@@ -25,7 +25,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["libs/passport-auth/*"]
+      "exclude": ["libs/passport-auth/*", "libs/test-lib/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -39,7 +39,7 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": ["libs/passport-auth/*"],
+      "include": ["libs/passport-auth/*", "libs/test-lib/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
