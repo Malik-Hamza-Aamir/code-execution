@@ -14,6 +14,9 @@
     },
     {
       "path": "./apps/execution-service"
+    },
+    {
+      "path": "./apps/frontend-app"
     }
   ]
 }

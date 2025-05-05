@@ -5,7 +5,7 @@ import { CommonRepository } from './common.repository';
 @Global()
 @Module({
   imports: [PrismaModule],
-  providers: [],
+  providers: [CommonRepository],
   exports: [CommonRepository],
 })
 export class CommonRepositoryModule {}

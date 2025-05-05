@@ -1,13 +1,13 @@
 import { Module, Global } from '@nestjs/common';
-import { JwtStrategy } from './strategies/jwt.strategy.js';
-import { GitHubStrategy } from './strategies/github.strategy.js';
-import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy.js';
+import { JwtStrategy } from './strategies/jwt.strategy';
+import { GitHubStrategy } from './strategies/github.strategy';
+import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { PassportAuthService } from './passport-auth.service.js';
-import { JwtAuthGuard } from './guards/jwt-auth.guard.js';
-import { JwtRefreshGuard } from './guards/jwt-refresh-auth.guard.js';
-import { GitHubAuthGuard } from './guards/github-auth.guard.js';
+import { PassportAuthService } from './passport-auth.service';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { JwtRefreshGuard } from './guards/jwt-refresh-auth.guard';
+import { GitHubAuthGuard } from './guards/github-auth.guard';
 
 @Global()
 @Module({

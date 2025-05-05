@@ -5,7 +5,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
-import { CreateUserDto } from '../dto/create-user.dto/create-user.dto.js'; 
+import { CreateUserDto } from '../dto/create-user.dto/create-user.dto.js';
 
 interface RefreshToken {
   userId: number;
@@ -86,6 +86,25 @@ export class CommonRepository {
     } catch (error) {
       console.log('[failed to clear refresh token]', error);
       throw new InternalServerErrorException('Failed to clear token');
+    }
+  }
+
+  async getProfileById(id: string) {
+    try {
+      return this.prisma.user.findUnique({
+        where: { id: Number(id) },
+        select: {
+          id: true,
+          email: true,
+          role: true,
+          password: true,
+          username: true,
+          dob: true,
+        },
+      });
+    } catch (error) {
+      console.log('[failed to get complete profile]', error);
+      throw new InternalServerErrorException('Failed to Fetch Profile');
     }
   }
 }

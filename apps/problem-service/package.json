@@ -40,5 +40,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@code-execution/problem-service": "file:"
   }
 }
