@@ -6,23 +6,39 @@ import { Signup, Login, Explore, Problems, Solution } from "../pages";
 
 const router = () => createBrowserRouter([
     {
+        path: '/login',
+        element: <Login />,
+        errorElement: <CustomErrorPage />,
+    },
+    {
+        path: '/signup',
+        element: <Signup />,
+        errorElement: <CustomErrorPage />,
+    },
+    {
         path: '/',
         element: <Layoutv1 />,
         errorElement: <CustomErrorPage />,
         children: [
-            { path: '/', element: <Explore /> },
-            { path: '/login', element: <Login /> },
-            { path: '/signup', element: <Signup /> },
             {
-                path: '/',
+                index: true,
+                element: <Explore />,
+            },
+            {
                 element: <ProtectedRoute />,
                 children: [
-                    { path: '/problems', element: <Problems /> },
-                    { path: '/problems/:problemId', element: <Solution /> },
-                ]
-            }
-        ]
-    }
+                    {
+                        path: 'problems',
+                        element: <Problems />,
+                    },
+                    {
+                        path: 'problems/:problemId',
+                        element: <Solution />,
+                    },
+                ],
+            },
+        ],
+    },
 ]);
 
 export const routerInstance = router();
